@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script type="module" src="/@vite/client"></script>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="./index.css">
@@ -8,12 +10,53 @@
     <title>Vite App</title>
   </head>
   <body>
-    <!-- <div ></div> -->
-    <!-- <dotlottie-player class="loader w-full h-screen absolute object-cover" src="https://lottie.host/7306a844-062b-4810-be9e-d812645f7fc3/Mg4uDhYD7E.json" background="transparent" speed="1" loop autoplay></dotlottie-player> -->
-    <canvas class="w-full h-screen bg-slate-900"></canvas>
+    <div class="w-full h-screen bg-slate-900 overflow-hidden font-bellina relative">
+      <div class="w-full h-full absolute top-0 left-0 z-10">
+        <nav class="w-full h-16 flex justify-between items-center px-4 md:px-10 relative">
+          <div class="text-white text-2xl font-bold uppercase">
+            planets 
+          </div>
+          <button class="md:hidden" id="menu-toggle">
+            <span class="text-white">Menu</span>
+          </button>
+     
+          
+          <div class="text-white  hidden md:flex md:gap-16 absolute top-0 right-0 md:static">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </div>
+        </nav>
+        <div class="absolute top-[10%] left-1/2 -translate-x-1/2">
+          <div class="w-full h-[4em] md:h-[5em] overflow-hidden">
+            <h1 class="text-white text-4xl md:text-5xl font-bold h-full text-center heading">Earth</h1>
+            <h1 class="text-white text-4xl md:text-5xl font-bold h-full text-center heading">Scilla</h1>
+            <h1 class="text-white text-4xl md:text-5xl font-bold h-full text-center heading">Volcanic</h1>
+            <h1 class="text-white text-4xl md:text-5xl font-bold h-full text-center heading">Venus</h1>
+          </div>
+          <div class="w-full h-[2em]  overflow-hidden">
+            <p class="text-white text-xs text-center max-w-[250px] md:max-w-[300px] h-full mx-auto text-nowrap paragraph">
+              Earth is the third planet from the Sun and the only known planet to harbor life.
+            </p>
+            <p class="text-white text-xs text-center max-w-[250px] md:max-w-[300px] h-full  mx-auto text-nowrap paragraph">
+              Scilla is a planet shrouded in mist, with a mysterious and enigmatic atmosphere.
+            </p>
+            <p class="text-white text-xs text-center max-w-[250px] md:max-w-[300px] h-full    mx-auto text-nowrap    paragraph">
+              Volcanic is a planet with a volcanic landscape, scorching heat, and a thriving volcanic activity.
+            </p>
+            
+              <p class="text-white text-xs text-center max-w-[250px] md:max-w-[300px] h-full    mx-auto text-nowrap  paragraph">
+                Discover the mysteries of Scilla, a planet shrouded in mist, and the scorching heat of Venus.
+              </p>
+          </div>
+          <div class="w-80 md:w-96 h-px bg-gradient-to-r from-transparent via-white to-transparent mt-4"></div>
+        </div>
+      </div>
+      <canvas class="w-full h-full top-0 left-0 absolute"></canvas>
+    </div>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
    
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/main.js?t=1729526044838"></script>
   </body>
 </html>
