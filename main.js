@@ -7,9 +7,8 @@ import { TextureLoader } from "/node_modules/.vite/deps/three.js?v=6697872f"; //
 // Scene setup
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 100);
-const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.querySelector('canvas') });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.querySelector('canvas'), alpha: true });
+
 camera.position.z = 10;
 
 // Real-time loader for dynamic content
@@ -93,6 +92,19 @@ for(let i = 0; i<4; i++){
 spheres.rotation.x = 0.15;
 spheres.position.y = -0.54;
 scene.add(spheres);
+
+// Parallax effect for mouse movement
+const parallaxEffect = (event) => {
+    const mouseX = (event.clientX / window.innerWidth) * 0.2 ; // Normalize mouse X to range [-1, 1]
+    const mouseY = (event.clientY / window.innerHeight) * 0.2 - 1; // Normalize mouse Y to range [-1, 1]
+
+    // Adjust sphere positions based on mouse movement
+    spheres.position.x = mouseX * 0.5; // Adjust the multiplier for desired effect
+    spheres.position.y = mouseY * 0.5; // Adjust the multiplier for desired effect
+};
+
+// Attach mouse move event
+window.addEventListener('mousemove', parallaxEffect);
 
 // Animation for a dynamic view
 // setInterval(() => {
